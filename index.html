@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <body onload=showDate();>
+        <span id='horloge' style="color:rgb(0, 0, 0);font-size:40px;"></span>
+
+
+
+        <p>Créer des alarmes</p>
+        <div>
+            <div id="duplicater">
+                <input class="heur" type="number" name="hour" placeholder="heur" min="0" max="12" required />
+                <input class="min" type="number" name="min" min="0" max="60" placeholder="minute" required />
+                <label class="labNom" for="nomAlarme">nom de l'alarme</label>
+                <input type="text" id="nomAlarme" class="nomAlarme" name="nomAlarme">
+
+                <select class="select" title="choisir" name="zone" required>
+                    <option class="opDefault" value="" selected disabled>son de l'alarme</option>
+                    <option class="op1" value="son 1"> son 1</option>
+                    <option class="op2" value="son 2">son 2</option>
+                </select>
+
+                <button class="supAlarme" type="button">-</button>
+
+
+            </div>
+        </div>
+        <button id="addAlarme" type="button">+</button>
+        <audio id="srcSon1" style="display:none;" controls>
+            <source src="alarme/son1.mp3" type="audio/mp3">
+            <p>Votre navigateur ne prend pas en charge l'audio HTML5. Voici, à la place, un <a href="viper.mp3">lien sur
+                    l'audio</a>.</p>
+        </audio>
+        <audio id="srcSoné" style="display:none;" controls>
+            <source src="alarme/son2.mp3" type="audio/mp3">
+            <p>Votre navigateur ne prend pas en charge l'audio HTML5. Voici, à la place, un <a href="viper.mp3">lien sur
+                    l'audio</a>.</p>
+        </audio>
+
+        <script src="index.js"></script>
+    </body>
+
+</html>
