@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
     <title>Document</title>
 </head>
 
@@ -17,20 +18,27 @@
 
         <p>Créer des alarmes</p>
         <div>
+            <span id="altSup"></span>
+        </div>
+        <div>
             <div id="duplicater">
-                <input class="heur" type="number" name="hour" placeholder="heur" min="0" max="12" required />
-                <input class="min" type="number" name="min" min="0" max="60" placeholder="minute" required />
-                <label class="labNom" for="nomAlarme">nom de l'alarme</label>
-                <input type="text" id="nomAlarme" class="nomAlarme" name="nomAlarme">
+                <form class="form" name="form">
+                    <label class="labsonChoisi" for="sonChoisi">valider </label>
+                    <input type="checkbox" name="cbSon" class="sonChoisi" id="sonChoisi">
+                    <input class="heur" type="number" name="hour" placeholder="heur" min="0" max="12" required />
+                    <input class="min" type="number" name="min" min="0" max="60" placeholder="minute" required />
+                    <label class="labNom" for="nomAlarme">nom de l'alarme</label>
+                    <input type="text" id="nomAlarme" class="nomAlarme" name="nomAlarme">
 
-                <select class="select" title="choisir" name="zone" required>
-                    <option class="opDefault" value="" selected disabled>son de l'alarme</option>
-                    <option class="op1" value="son 1"> son 1</option>
-                    <option class="op2" value="son 2">son 2</option>
-                </select>
+                    <select class="select" title="choisir" name="zone" required>
+                        <option class="opDefault" value="" selected disabled>son de l'alarme</option>
+                        <option class="op1" value="son 1"> son 1</option>
+                        <option class="op2" value="son 2">son 2</option>
+                    </select>
 
-                <button class="supAlarme" type="button">-</button>
-
+                    <button onclick="this.parentNode.parentNode.remove(); removeForm();" class="supAlarme"
+                        type="button">-</button>
+                </form>
 
             </div>
         </div>
@@ -45,6 +53,28 @@
             <p>Votre navigateur ne prend pas en charge l'audio HTML5. Voici, à la place, un <a href="viper.mp3">lien sur
                     l'audio</a>.</p>
         </audio>
+
+
+        <div id="duplicaterClone" style="display: none;">
+            <form class="form" name="form">
+                <label class="labsonChoisi" for="sonChoisiclone">valider </label>
+                <input type="checkbox" name="cbSon" class="sonChoisi" id="sonChoisiclone">
+                <input class="heur" type="number" name="hour" placeholder="heur" min="0" max="12" required />
+                <input class="min" type="number" name="min" min="0" max="60" placeholder="minute" required />
+                <label class="labNom" for="nomAlarmeclone">nom de l'alarme</label>
+                <input type="text" id="nomAlarmeclone" class="nomAlarme" name="nomAlarme">
+
+                <select class="select" title="choisir" name="zone" required>
+                    <option class="opDefault" value="" selected disabled>son de l'alarme</option>
+                    <option class="op1" value="son 1"> son 1</option>
+                    <option class="op2" value="son 2">son 2</option>
+                </select>
+
+                <button onclick="this.parentNode.parentNode.remove(); removeForm();" class="supAlarme"
+                    type="button">-</button>
+            </form>
+
+        </div>
 
         <script src="index.js"></script>
     </body>
